@@ -1,0 +1,14 @@
+
+{% if summary %}
+ <h2>Comments</h2>
+  <p>{{ comment }}</p>
+ <p>
+  {% for comment in summary %}     
+
+   <p><img src="/static/user_logo.jpg" width="60" height="40"  alt="Fans" class="my_fans"> {{ comment [1]}} <a href="mailto:{{comment [2]}}?subject=SweetWords"> mail</a>   <img  src="/static/message.jpeg"  width="18" height="16"  alt="Fansmessage" class="Fansmessage"> <a href="{{comment [3]}}">message</a> </p> 
+
+   
+  {% endfor %}
+</p>
+{% endif %}
+

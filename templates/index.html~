@@ -1,0 +1,64 @@
+{% extends "message_layout.html" %}
+
+{% block head %}
+<title>KRAYNI Anis</title>
+{% endblock %}
+
+{% block body %}
+<h2> KRAYNI ANIS </h2>
+  <div class="imgcontainer">
+    <img src="/static/krayni.jpg" alt="krayni_anis" class="krayni">
+  </div>
+
+<div class='panel'>
+  <p>
+    Hello, i'm Dr. Anis KRAYNY, a doctor of telecommunication. I'm interested on the use of the deep  learning in the clothes recognition. 
+For more information please consult my <a href="{{ url_for('return_CV') }}">Curriculum-Vitae</a>
+  </p>
+</div>
+
+<h4> My Interests </h4>
+
+<p> Here are a few things I like: </p>
+
+<div class="large-3 columns">
+  <h5> Programming skills </h5>
+  <p>
+    C++, Python, JAVA
+  </p>
+</div>
+
+<div class="large-3 columns">
+  <h5> Scientific Expertise </h5>
+  <p>
+   Communication Numerique 
+   Traitement du signal et traitement d'image.
+   Statistique: machine learning
+   Telecommunication
+   Informatique 
+   Electromagnétisme et propagation 
+  </p>
+</div>
+
+
+
+<h4>Leave me a message</h4>
+
+<p>
+  You can leave me a message below, or see messages people have left me <a href="{{ url_for('sohw_db') }}">here</a>
+</p>
+
+<div class="large-8 columns">
+<form action="/submit_message" method="post">
+  <input type="text" placeholder="Name" name="who">
+  <input type="text" placeholder="AdressMail" name="adressmail">
+  <textarea placeholder="Enter your message here" name="message" cols="50" rows="4"></textarea>
+  <input type="submit" value="Submit">
+</form>
+</div>
+<p>
+
+</p>
+{% endblock %}
+
+

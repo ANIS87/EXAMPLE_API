@@ -1,0 +1,134 @@
+<!doctype html>
+<body style="background-color:white;">
+<title>Hello from Flask</title>
+<h2>Try a free demo !</h2>
+{% if filename %}
+     <div class="inputim">
+  <img src="{{ url_for('send_image', filename=filename) }}" alt="logo" />
+  <h1 style="color:black;">Input</h1>
+</div>
+
+{% else %}
+  <h1>no image for whatever reason</h1>
+{% endif %}
+
+
+{% if filename %}
+     <div class="res">
+  <img src="{{ url_for('send_result', filename=filename) }}" alt="res" />
+   <h1 style="color:black;">Output</h1> 
+</div>
+{% else %}
+  <h1>no image for whatever reason</h1>
+{% endif %}
+<form action="{{ url_for('upload_file') }}" method=post>
+    
+
+  <!-- <div class="container" style="background-color:#f1f1f1"> </div> -->
+    <button type="submit" class="cancelbtn">New image</button>
+    <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->  
+</form>
+
+<form action="{{ url_for('logout') }}">
+    <button type="submit" class="logout">logout</button>
+</form>
+ <!-- logout -->
+<form action="{{ url_for('index') }}">
+    <button type="submit" class="deletebtn">Contact</button>
+</form>
+ <!-- result -->
+<form action="{{ url_for('file_downloads') }}">
+    <button type="submit" class="Downloadbtn">Download</button>
+</form>
+
+
+</body>
+<style>
+.inputim img {
+  position: absolute;
+  left: 20%;
+  padding: 60px;
+  width: 300px;
+  height: 300px;
+
+}
+
+.inputim h1 {
+     position: relative;
+    bottom: -360px;
+    left: 30%;
+   font-size: 200%;
+    
+}
+
+.res img {
+  position: absolute;
+  left: 50%;  
+  width: 300px;
+  height: 300px;
+  background: #555;
+}
+
+.res h1 {
+  
+  position: relative;
+  bottom: -300px;
+  left: 55%;
+  font-size: 200%;
+}
+
+button {
+    background-color: red;
+    position: absolute;
+    color: black;
+    padding: 15px 15px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.cancelbtn {
+    width: 150px;
+    padding: 10px 10px;
+    background-color: #bfbfbf;
+}
+
+button {
+    background-color: red;
+    position: absolute;
+    color: black;
+    padding: 15px 15px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+.logout {
+    position: relative;
+    bottom: -45px;
+    margin: 8px 0;
+    width: 150px;
+    padding: 10px 10px;
+    background-color: #bfbfbf;
+}
+
+.deletebtn {
+    position: relative;
+    bottom: -35px;
+    margin: 8px 0;
+    width: 150px;
+    padding: 10px 10px;
+    background-color: #bfbfbf;
+}
+
+.Downloadbtn {
+    position: relative;
+    bottom: -25px;
+    margin: 8px 0;
+    width: 150px;
+    padding: 10px 10px;
+    background-color: #bfbfbf;
+}
+
+</style>

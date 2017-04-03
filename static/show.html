@@ -1,0 +1,20 @@
+<!doctype html>
+<body style="background-color:powderblue;">
+<title>Hello from Flask</title>
+<h1 style="color:white;">Input</h1>
+{% if filename %}
+ 
+  <h1> <img src="{{ url_for('send_file', filename=filename) }}"> </h1>
+{% else %}
+  <h1>no image for whatever reason</h1>
+{% endif %}
+
+<h1 style="color:black;">Output</h1>
+{% if filename %}
+ 
+  <h1> <img src="{{ url_for('send_result', filename=filename) }}"> </h1>
+{% else %}
+  <h1>no image for whatever reason</h1>
+{% endif %}
+
+</body>
